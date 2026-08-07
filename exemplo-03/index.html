@@ -1,0 +1,70 @@
+<output id="output"></output>
+<!-- https://www.jsdelivr.com/package/npm/markdown -->
+<script src="https://cdn.jsdelivr.net/npm/markdown@0.5.0/lib/markdown.min.js"></script>
+
+<script>
+  const output = document.getElementById("output");
+
+  (async () => {
+    try {
+      const languageModel = window.LanguageModel;
+      if (!languageModel || typeof languageModel.create !== "function") {
+        output.innerHTML =
+          "A API LanguageModel nao esta disponivel neste navegador/contexto.";
+        return;
+      }
+
+      // Some implementations do not expose LanguageModel.params().
+      let temperature = 0.7;
+      let topK = 40;
+
+      if (typeof languageModel.params === "function") {
+        const params = await languageModel.params();
+        console.log("Language Model Params:", params);
+
+        if (typeof params?.defaultTemperature === "number") {
+          temperature = params.defaultTemperature;
+        }
+        if (typeof params?.defaultTopK === "number") {
+          topK = params.defaultTopK;
+        }
+      }
+
+      const initialPrompts = [
+        {
+          role: "system",
+          content: `Você é um assistente de IA que responde de forma clara e objetiva.`,
+        },
+      ];
+
+      const question = "Quem inventou o JavaScript?";
+      output.innerHTML = "Gerando resposta...";
+
+      const session = await languageModel.create({
+        expectedInputLanguages: ["pt"],
+        temperature,
+        topK,
+        initialPrompts,
+      });
+
+      const responseStream = await session.promptStreaming([
+        {
+          role: "user",
+          content: question,
+        },
+      ]);
+      output.innerHTML = "";
+      let fullText = "";
+      for await (const token of responseStream) {
+        fullText += token;
+        output.innerHTML = markdown.toHTML(fullText);
+
+        console.log(token);
+      }
+    } catch (error) {
+      console.error(error);
+      output.innerHTML =
+        "Erro ao usar o LanguageModel. Veja o console para detalhes.";
+    }
+  })();
+</script>
