@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Neo4j Docker runtime data
+neo4j/data/
+neo4j/logs/
+neo4j/plugins/
+
+# Generated and local files
+*.log
+.DS_Store
