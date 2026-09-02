@@ -1,5 +1,5 @@
 import Fastify from "fastify";
-import { buildGraph } from "./graph/nodes/graph.ts";
+import { buildGraph } from "./graph/graph.ts";
 import { HumanMessage } from "langchain";
 
 const graph = buildGraph();
