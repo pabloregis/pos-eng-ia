@@ -1,4 +1,3 @@
-import { AIMessage } from "langchain";
 import { type GraphState } from "../graph.ts";
 
 export function lowerCaseNode(state: GraphState): GraphState {
