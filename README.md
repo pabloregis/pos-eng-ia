@@ -11,4 +11,9 @@ As pastas estão organizadas por módulo, disciplina e aula, acompanhando a evol
 
 Cada exemplo possui seu próprio `README.md` (quando aplicável) com instruções específicas de execução.
 
+## Documentação acadêmica
+
+- [`docs/grade-curricular.md`](docs/grade-curricular.md) — matriz curricular e conteúdo programático oficial do PPC.
+- [`docs/aulas.md`](docs/aulas.md) — relação entre disciplinas, módulos, aulas e projetos registrados neste repositório.
+
 Para conhecer a pós-graduação, consulte a [página oficial da UNIPDS](https://unipds.com.br/ff-pos-ia/).
