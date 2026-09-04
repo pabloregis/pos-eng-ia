@@ -12,3 +12,10 @@ O PPC não contém essa divisão por módulo e aula. Registre aqui somente infor
   - Projeto: [`modulo02/02-langchain-intro`](../modulo02/02-langchain-intro/)
 - **Aula 4:** Criando pipeline completo com fluxos condicionais e testes automatizados.
 - **Aula 5:** Definindo node de fallback e implementando casos de teste restantes.
+
+### Módulo 3
+
+- **Aula 1:** Identificando a intenção de usuários e marcando consultas médicas — introdução ao projeto.
+- **Aula 2:** Structured JSON + JSON Prompts: usando OpenRouter para saídas estruturadas em JSON automáticas.
+- **Aula 3:** Transformando intenção de usuários em JSON e primeiro caso de teste end-to-end.
+- **Aula 4:** Cancelando consultas a partir de texto não estruturado e último caso de teste end-to-end.
