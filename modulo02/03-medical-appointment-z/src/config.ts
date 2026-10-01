@@ -25,7 +25,10 @@ export const config: ModelConfig = {
   xTitle: "IA Devs - Prompt Chaining Article Generator",
   models: [
     // https://openrouter.ai/models?order=latency-low-to-high&variant=free&supported_parameters=response_format
-    "liquid/lfm-2.5-2.6b:free",
+    // OpenRouter aceita no máximo 3 modelos; os pagos (baratos) vêm primeiro e o gratuito é reserva
+    "openai/gpt-oss-20b",
+    "deepseek/deepseek-v4-flash",
+    "nvidia/nemotron-3-super-120b-a12b:free",
   ],
   provider: {
     sort: {

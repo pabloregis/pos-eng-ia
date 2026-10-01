@@ -29,7 +29,7 @@ export function createIdentifyIntentNode(llmClient: OpenRouterService) {
       }
 
       const intentData = result.data!;
-      // console.log("✅ Intent identified:", intentData);
+      console.log("✅ Intent identified:", intentData);
 
       return {
         ...intentData,
